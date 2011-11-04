@@ -1,3 +1,5 @@
+call pathogen#infect()
+
 function EditUTF8()
     set encoding=utf-8
     set termencoding=big5
