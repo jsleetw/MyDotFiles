@@ -1,7 +1,7 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-let &statusline='%<[%n] %f %m%= %h%r %-19([%p%%] %3l,%02c%03V%)%y [%{FileEncoding()}] '
+let &statusline='%<[%n] %f %m%= %h%r %-19([%p%%] %3l,%02c%03V%)%y [%{FileEncoding()}] [%{ShowFileFormat()}]'
 
 fu! FileEncoding()
     if &fileencoding == ''
@@ -10,6 +10,10 @@ fu! FileEncoding()
         return &fenc
     endif
 endf
+
+function ShowFileFormat()
+    return &fileformat
+endfunction 
 
 function ForPHP()
     " {{{
@@ -172,7 +176,7 @@ noremap <C-D> :tabc<CR>
 set fileencodings=ucs-bom,utf-8,big5,cp936,gb18030,euc-jp,euc-kr,latin1
 set encoding=utf-8
 set termencoding=utf-8
-set fileformats=unix,dos
+set fileformats=unix,dos,mac
 set fileformat=unix
 
 autocmd FileType php call ForPHP()
