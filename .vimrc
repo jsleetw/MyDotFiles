@@ -1,11 +1,15 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-autocmd FileType php call ForPHP()
-autocmd FileType make set sw=8
-autocmd FileType make set sts=8
-
 let &statusline='%<[%n] %f %m%= %h%r %-19([%p%%] %3l,%02c%03V%)%y [%{FileEncoding()}] '
+
+fu! FileEncoding()
+    if &fileencoding == ''
+        return "is not set"
+    else
+        return &fenc
+    endif
+endf
 
 function ForPHP()
     " {{{
@@ -48,6 +52,22 @@ function ForPHP()
     " }}} With close char mapping de-activated (currently in-active)
 endfunction
 
+function ForPython()
+    "{{{
+    " Disable pylint checking every save
+    let g:pymode_lint = 0
+    setlocal tabstop=4
+    setlocal softtabstop=4
+    setlocal shiftwidth=4
+    setlocal textwidth=80
+    setlocal smarttab
+    setlocal expandtab
+    " Map ; to run PEP8 check
+    noremap ; :w!<CR>:!pep8 %<CR>
+    set nonumber
+    "}}}
+endfunction
+
 let Tlist_Ctags_Cmd="/usr/local/bin/exctags"
 let Tlist_Inc_Winwidth = 0
 nnoremap <silent> <F1> :Tlist<CR>
@@ -76,7 +96,6 @@ set makeprg=gmake\ OPTFLAG=-g
 :map <c-w><c-b> :BottomExplorerWindow<cr>
 set foldmethod=marker
 source $VIMRUNTIME/macros/matchit.vim
-"set expandtab
 ":au FileType make set noexpandtab
 source $VIMRUNTIME/menu.vim
 set wildmenu
@@ -150,17 +169,13 @@ map <C-\> :tabn<CR>
 " CTRL+d is close tab
 noremap <C-D> :tabc<CR>
 
-fu! FileEncoding()
-    if &fileencoding == ''
-        return "is not set"
-    else
-        return &fenc
-    endif
-endf
-
 set fileencodings=ucs-bom,utf-8,big5,cp936,gb18030,euc-jp,euc-kr,latin1
 set encoding=utf-8
 set termencoding=utf-8
 set fileformats=unix,dos
 set fileformat=unix
 
+autocmd FileType php call ForPHP()
+autocmd FileType python call ForPython()
+autocmd FileType make set sw=8
+autocmd FileType make set sts=8
