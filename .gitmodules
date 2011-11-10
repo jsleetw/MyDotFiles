@@ -1,3 +1,6 @@
 [submodule ".vim/bundle/python-mode"]
 	path = .vim/bundle/python-mode
 	url = https://github.com/klen/python-mode.git
+[submodule ".vim/bundle/vim-pep8"]
+	path = .vim/bundle/vim-pep8
+	url = https://github.com/nvie/vim-pep8.git
