@@ -1,7 +1,7 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-let &statusline='%<[%n] %f %m%= %h%r %-19([%p%%] %3l,%02c%03V%)%y [%{FileEncoding()}] [%{ShowFileFormat()}]'
+let &statusline='%<[%n] %F %m%= %h%r %-19([%p%%] %3l,%02c%03V%)%y [%{FileEncoding()}] [%{ShowFileFormat()}]'
 
 fu! FileEncoding()
     if &fileencoding == ''
@@ -67,8 +67,12 @@ function ForPython()
     setlocal smarttab
     setlocal expandtab
     " Map ; to run PEP8 check
-    noremap ; :w!<CR>:!pep8 %<CR>
-    set nonumber
+    "noremap ; :w!<CR>:!pep8 --show-pep8 --show-source %<CR>
+    noremap <buffer> ; :call Pep8()<CR>
+    " Map ' to run python stynx check
+    "noremap ' :w!<CR>:!python -tt %<CR>
+    noremap <buffer> ' :call Pyflakes()<CR>
+    "set nonumber
     "}}}
 endfunction
 
