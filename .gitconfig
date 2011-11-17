@@ -8,3 +8,8 @@
     log = auto
 [alias]
     st = status
+[core]
+    editor = vim
+[merge]
+    tool = vimdiff
+
