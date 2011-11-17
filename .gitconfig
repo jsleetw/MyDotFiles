@@ -7,7 +7,12 @@
     branch = auto
     log = auto
 [alias]
-    st = status
+	st = status
+	co = checkout
+	br = branch
+	ci = commit
+	unstage = reset HEAD --
+	last = log -1 HEAD
 [core]
     editor = vim
 [merge]
