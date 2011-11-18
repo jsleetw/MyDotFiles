@@ -66,6 +66,7 @@ function ForPython()
     setlocal textwidth=80
     setlocal smarttab
     setlocal expandtab
+    let g:pep8_args = "--ignore=E501" " bypass E501 line too long (82 characters) error
     " Map ; to run PEP8 check
     "noremap ; :w!<CR>:!pep8 --show-pep8 --show-source %<CR>
     noremap <buffer> ; :call Pep8()<CR>
