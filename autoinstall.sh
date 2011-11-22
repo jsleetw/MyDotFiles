@@ -1,35 +1,30 @@
-#!/bin/sh
+#!/bin/bash
 INSTALL_TO=~/mydev
 
-warn() {
-    echo "$1" >&2
+function LinkIt() {
+    if [ -e "$HOME/$1" ]; then
+        echo "~/$1 already exists."
+    else
+        ln -s "$INSTALL_TO/_myDotFile/$1" "$HOME/$1"
+    fi
 }
 
-die() {
-    warn "$1"
-    exit 1
-}
+if [ -d "$INSTALL_TO/_myDotFile" ]; then
+    echo "$INSTALL_TO/_myDotFile already exists."
+else
+    cd "$INSTALL_TO"
+    git clone git://github.com/jsleetw/_myDotFile.git
+    cd _myDotFile
 
-[ -e "$INSTALL_TO/_myDotFile" ] && die "$INSTALL_TO/_myDotFile already exists."
-[ -e "~/.vim" ] && die "~/.vim already exists."
-[ -e "~/.vimrc" ] && die "~/.vimrc already exists."
-[ -e "~/.bashrc" ] && die "~/.bashrc already exists."
-[ -e "~/.gitconfig" ] && die "~/.gitconfig already exists."
+    # Download vim plugin bundles
+    git submodule init
+    git submodule update
+fi
 
-cd "$INSTALL_TO"
-git clone git://github.com/jsleetw/_myDotFile.git
-cd _myDotFile
+LinkIt .vim
+LinkIt .vimrc
+LinkIt .bashrc
+LinkIt .gitconfig
 
-# Download vim plugin bundles
-git submodule init
-git submodule update
-
-# Symlink ~/.vim and ~/.vimrc
-cd ~
-ln -s "$INSTALL_TO/_myDotFile/.vimrc" .vimrc
-ln -s "$INSTALL_TO/_myDotFile/.vim" .vim
-ln -s "$INSTALL_TO/_myDotFile/.bashrc" .bashrc
-ln -s "$INSTALL_TO/_myDotFile/.gitconfig" .gitconfig
-
-echo "Installed and configured , have fun."
+echo "Installed and configured, have fun."
 
