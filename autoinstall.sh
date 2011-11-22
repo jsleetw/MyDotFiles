@@ -25,6 +25,7 @@ LinkIt .vim
 LinkIt .vimrc
 LinkIt .bashrc
 LinkIt .gitconfig
+LinkIt git-flow-completion.bash
 
 echo "Installed and configured, have fun."
 
