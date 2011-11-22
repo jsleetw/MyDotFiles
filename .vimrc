@@ -1,8 +1,6 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-syntax on
-filetype plugin indent on
 " This must be first, because it changes other options as side effect
 set nocompatible
 let mapleader="," " change the mapleader from \ to ,
@@ -13,7 +11,7 @@ set hidden
 set nowrap        " don't wrap lines
 set tabstop=4     " a tab is four spaces
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
-set autoindent    " always set autoindenting on                  
+set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
 set number        " always show line numbers
 set shiftwidth=4  " number of spaces to use for autoindenting
@@ -24,9 +22,8 @@ set smartcase     " ignore case if search pattern is all lowercase,
                   "    case-sensitive otherwise
 set smarttab      " insert tabs on the start of a line according to
                   "    shiftwidth, not tabstop
-set hlsearch      " highlight search terms                  
+set hlsearch      " highlight search terms
 set incsearch     " show search matches as you type
-:colorscheme elflord
 
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
@@ -38,8 +35,29 @@ set noerrorbells         " don't beep
 set nobackup             " no more .swp
 set noswapfile
 
+"highlight whitespaces for python
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+set pastetoggle=<F2>  " F2 to paste mode
+
+set mouse=a
+
+filetype plugin indent on
+
+if has('autocmd')
+    autocmd FileType php call ForPHP()
+    autocmd FileType python call ForPython()
+    autocmd FileType make set sw=8
+    autocmd FileType make set sts=8
+    autocmd filetype html,xml set listchars-=tab:>.
+endif
+
 set laststatus=2
 let &statusline='%<[%n] %{HasPaste()}%F %m%= %h%r %-19([%p%%] %3l,%02c%03V%)%y [%{FileEncoding()}] [%{&fileformat}]'
+
+colorscheme elflord
+syntax on
 
 function! HasPaste()
     if &paste
@@ -129,8 +147,6 @@ set textwidth=0
 set foldmethod=marker 
 " Autoclose folds, when moving out of them
 "set foldclose=all
-" Use incremental searching
-set incsearch
 " Jump 5 lines when running out of the screen
 set scrolljump=5
 " Indicate jump out of the screen when 3 lines before end of the screen
@@ -174,10 +190,4 @@ set encoding=utf-8
 set termencoding=utf-8
 set fileformats=unix,dos,mac
 set fileformat=unix
-
-autocmd FileType php call ForPHP()
-autocmd FileType python call ForPython()
-autocmd FileType make set sw=8
-autocmd FileType make set sts=8
-
 
