@@ -13,7 +13,7 @@ if [ -d "$INSTALL_TO/_myDotFile" ]; then
     echo "$INSTALL_TO/_myDotFile already exists."
 else
     cd "$INSTALL_TO"
-    git clone git://github.com/jsleetw/_myDotFile.git
+    git clone https://jsleetw@github.com/jsleetw/_myDotFile.git
     cd _myDotFile
 
     # Download vim plugin bundles
