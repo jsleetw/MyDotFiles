@@ -123,7 +123,7 @@ PS1="[\[\033[1;32m\]\w\[\033[0m\]] \[\033[0m\]\[\033[1;36m\]\$(git_branch)\[\033
 
 export PYTHONPATH=${PYTHONPATH}
 
-. ~/git-flow-completion.bash
+. ~/.bash/*
 
 #export LC_ALL=zh_TW.UTF-8
 #export LANG=zh_TW.UTF-8
