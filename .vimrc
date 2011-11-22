@@ -1,7 +1,53 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-let &statusline='%<[%n] %F %m%= %h%r %-19([%p%%] %3l,%02c%03V%)%y [%{FileEncoding()}] [%{ShowFileFormat()}]'
+syntax on
+filetype plugin indent on
+" This must be first, because it changes other options as side effect
+set nocompatible
+let mapleader="," " change the mapleader from \ to ,
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+set hidden
+set nowrap        " don't wrap lines
+set tabstop=4     " a tab is four spaces
+set backspace=indent,eol,start " allow backspacing over everything in insert mode
+set autoindent    " always set autoindenting on                  
+set copyindent    " copy the previous indentation on autoindenting
+set number        " always show line numbers
+set shiftwidth=4  " number of spaces to use for autoindenting
+set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
+set showmatch     " set show matching parenthesis
+set ignorecase    " ignore case when searching
+set smartcase     " ignore case if search pattern is all lowercase,
+                  "    case-sensitive otherwise
+set smarttab      " insert tabs on the start of a line according to
+                  "    shiftwidth, not tabstop
+set hlsearch      " highlight search terms                  
+set incsearch     " show search matches as you type
+:colorscheme elflord
+
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set title                " change the terminal's title
+set visualbell           " don't beep
+set noerrorbells         " don't beep
+
+set nobackup             " no more .swp
+set noswapfile
+
+set laststatus=2
+let &statusline='%<[%n] %{HasPaste()}%F %m%= %h%r %-19([%p%%] %3l,%02c%03V%)%y [%{FileEncoding()}] [%{&fileformat}]'
+
+function! HasPaste()
+    if &paste
+        return 'PASTE MODE  '
+    else
+        return ''
+    endif
+endfunction
 
 fu! FileEncoding()
     if &fileencoding == ''
@@ -11,11 +57,7 @@ fu! FileEncoding()
     endif
 endf
 
-function ShowFileFormat()
-    return &fileformat
-endfunction 
-
-function ForPHP()
+fu! ForPHP()
     " {{{
     " Map ; to run PHP parser check
     noremap ; :w!<CR>:!php -l %<CR>
@@ -54,9 +96,9 @@ function ForPHP()
     " alternative
     map! =if if () {<CR><CR>} else {<CR><CR>}<Up><Up><Up><Up><Up><Up><ESC>/)<CR>i
     " }}} With close char mapping de-activated (currently in-active)
-endfunction
+endf
 
-function ForPython()
+fu! ForPython()
     "{{{
     " Disable pylint checking every save
     let g:pymode_lint = 0
@@ -66,7 +108,7 @@ function ForPython()
     setlocal textwidth=80
     setlocal smarttab
     setlocal expandtab
-    let g:pep8_args = "--ignore=E501" " bypass E501 line too long (82 characters) error
+    let g:pep8_args = "--ignore=E501" " pass E501 line too long (82 characters) error
     " Map ; to run PEP8 check
     "noremap ; :w!<CR>:!pep8 --show-pep8 --show-source %<CR>
     noremap <buffer> ; :call Pep8()<CR>
@@ -75,64 +117,14 @@ function ForPython()
     noremap <buffer> ' :call Pyflakes()<CR>
     "set nonumber
     "}}}
-endfunction
+endf
 
-let Tlist_Ctags_Cmd="/usr/local/bin/exctags"
-let Tlist_Inc_Winwidth = 0
-nnoremap <silent> <F1> :Tlist<CR>
-nnoremap <silent> <F2> :WMToggle<CR>
-nnoremap <silent> <F3> :BufExplorer<CR>
-filetype on
-filetype plugin on
-filetype indent on
-:colorscheme elflord 
-syntax on
-set vb t_vb=
-"set vb
-set ru
-set incsearch
-set hlsearch
-set ts=8
-set sts=4
-set sw=4
-set cindent
-set autoindent
-set bs=2
-set cinoptions=>s,e0,n0,f0,{0,}0,^0,:0,=s,ps,t0,+s,(s,m1,U1,us,)20,*30,g0
-set makeprg=gmake\ OPTFLAG=-g 
-:map <c-w><c-t> :WMToggle<cr>
-:map <c-w><c-f> :FirstExplorerWindow<cr>
-:map <c-w><c-b> :BottomExplorerWindow<cr>
-set foldmethod=marker
-source $VIMRUNTIME/macros/matchit.vim
-":au FileType make set noexpandtab
-source $VIMRUNTIME/menu.vim
-set wildmenu
-set cpo-=<
-set wcm=<C-Z>
-":map <F4> :emenu <C-Z>
-set ls=2
-set grepprg=global\ -t
-set grepformat=%m\	%f\	%l
-:set sidescroll=5
-:set scrolljump=5
-:set listchars+=precedes:<,extends:>
-let g:vikiUseParentSuffix = 1
-:map <LocalLeader>g <c-cr>
-" Set standard setting for PEAR coding standards
-"set tabstop=4
-set shiftwidth=4
 " Auto expand tabs to spaces
 set expandtab
 " Auto indent after a {
-set autoindent
 set smartindent
 " Linewidth to endless
 set textwidth=0
-" Do not wrap lines automatically
-set nowrap
-" Show line numbers by default
-" "set number
 " Enable folding by fold markers
 set foldmethod=marker 
 " Autoclose folds, when moving out of them
@@ -143,20 +135,19 @@ set incsearch
 set scrolljump=5
 " Indicate jump out of the screen when 3 lines before end of the screen
 set scrolloff=3
-" Repair wired terminal/vim settings
-set backspace=start,eol
 " Use the dictionary completion
 set complete-=k complete+=k
 " This function determines, wether we are on the start of the line text (then tab indents) or
 " if we want to try autocompletion
-function InsertTabWrapper()
+fu! InsertTabWrapper()
     let col = col('.') - 1
     if !col || getline('.')[col - 1] !~ '\k'
         return "\<tab>"
     else
         return "\<c-p>"
     endif
-endfunction
+endf
+
 " Remap the tab key to select action with InsertTabWrapper
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 " CTRL-Tab is Next window
@@ -188,3 +179,5 @@ autocmd FileType php call ForPHP()
 autocmd FileType python call ForPython()
 autocmd FileType make set sw=8
 autocmd FileType make set sts=8
+
+
