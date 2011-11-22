@@ -4,4 +4,4 @@ Optimize for Git branch
 
 Quick installation:
 
-    wget -O - https://github.com/jsleetw/_myDotFile/raw/master/autoinstall.sh | sh
+    wget -O - https://github.com/jsleetw/_myDotFile/raw/master/autoinstall.sh | bash
