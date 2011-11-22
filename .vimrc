@@ -41,6 +41,26 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 set pastetoggle=<F2>  " F2 to paste mode
 
+nnoremap ; :
+
+" Use Q for formatting the current paragraph (or selection)
+vmap Q gq
+nmap Q gqap
+
+nnoremap j gj
+nnoremap k gk
+
+" Easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+map <silent> ,/ :nohlsearch<CR>
+
+" sudo
+cmap w!! w !sudo tee % >/dev/null
+
 filetype plugin indent on
 
 if has('autocmd')
