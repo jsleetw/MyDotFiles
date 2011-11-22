@@ -41,8 +41,6 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 set pastetoggle=<F2>  " F2 to paste mode
 
-set mouse=a
-
 filetype plugin indent on
 
 if has('autocmd')
@@ -58,6 +56,28 @@ let &statusline='%<[%n] %{HasPaste()}%F %m%= %h%r %-19([%p%%] %3l,%02c%03V%)%y [
 
 colorscheme elflord
 syntax on
+
+if !exists("no_plugin_maps") && !exists("no_toggle_mouse_maps")
+    if !hasmapto('<SID>ToggleMouse()')
+        noremap <F3> :call <SID>ToggleMouse()<CR>
+        inoremap <F3> <Esc>:call <SID>ToggleMouse()<CR>a
+    endif
+endif
+
+fun! s:ToggleMouse()
+    if !exists("s:old_mouse")
+        let s:old_mouse = "a"
+    endif
+
+    if &mouse == ""
+        let &mouse = s:old_mouse
+        echo "Mouse is for Vim (" . &mouse . ")"
+    else
+        let s:old_mouse = &mouse
+        let &mouse=""
+        echo "Mouse is for terminal"
+    endif
+endfunction
 
 function! HasPaste()
     if &paste
