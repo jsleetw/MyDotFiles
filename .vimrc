@@ -199,19 +199,22 @@ set scrolljump=5
 set scrolloff=3
 " Use the dictionary completion
 set complete-=k complete+=k
+
+" Use SuperTab with snipmate now
+"let g:snips_trigger_key='<tab>'
 " This function determines, wether we are on the start of the line text (then tab indents) or
 " if we want to try autocompletion
-fu! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endf
+"fu! InsertTabWrapper()
+"    let col = col('.') - 1
+"    if !col || getline('.')[col - 1] !~ '\k'
+"        return "\<tab>"
+"    else
+"        return "\<c-p>"
+"    endif
+"endf
+"" Remap the tab key to select action with InsertTabWrapper
+"inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
-" Remap the tab key to select action with InsertTabWrapper
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 " CTRL-Tab is Next window
 noremap <C-Tab> :tabn<CR>
 inoremap <C-Tab> <C-O>:tabn<CR>
