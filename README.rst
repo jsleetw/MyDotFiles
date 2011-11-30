@@ -45,4 +45,4 @@ For command-t
 
     cd .vim/bundle/command-t; rake make
 
-.. _`vim-snipmate`: https://github.com/garbas/vim-snipmate
+:: _`vim-snipmate`: https://github.com/garbas/vim-snipmate
