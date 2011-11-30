@@ -24,6 +24,10 @@ Quick installation
 For command-t
 -------------
 * check vim support
+    
     vim --version | grep ruby
+
 * make command-t
+    
     cd .vim/bundle/command-t; rake make
+
