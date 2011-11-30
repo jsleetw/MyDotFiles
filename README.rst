@@ -18,6 +18,11 @@ vim-Plugin
     * vim-pep8 : python pep8 check
     * vim-pyflakes : python staic check
     * vim-pyunit : python unit test
+    * vim-snipmate : TextMate's snippets
+        * dependencies:
+            * tlib_vim
+            * vim-addon-mw-utils
+            * snipmate-snippets
 
 Quick installation
 ------------------
@@ -40,3 +45,4 @@ For command-t
 
     cd .vim/bundle/command-t; rake make
 
+.. _`vim-snipmate`: https://github.com/garbas/vim-snipmate
