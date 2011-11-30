@@ -21,7 +21,9 @@ vim-Plugin
 
 Quick installation
 ------------------
+
 ::
+
     wget -O - https://github.com/jsleetw/MyDotFiles/raw/master/autoinstall.sh | bash
 
 For command-t
@@ -29,10 +31,12 @@ For command-t
 * check vim support
 
 ::
+
     vim --version | grep ruby
 
 * make command-t
 
 ::
+
     cd .vim/bundle/command-t; rake make
 
