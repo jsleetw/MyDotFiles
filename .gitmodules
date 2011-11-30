@@ -8,3 +8,6 @@
     path = .vim/bundle/vim-pyflakes
     url = https://github.com/nvie/vim-pyflakes
 
+[submodule ".vim/bundle/vim-pyunit"]
+	path = .vim/bundle/vim-pyunit
+	url = https://github.com/nvie/vim-pyunit.git
