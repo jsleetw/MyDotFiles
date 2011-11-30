@@ -10,15 +10,15 @@ Feature
     * Optimize for Python coding
     * Optimize for Git branch
 
-vim-Plugin
+vim-Plugins
 ----------
     * command-t : fast file search, need ruby support for vim.
     * nerdtree : file browsering
     * python-mode : for python
-    * vim-pep8 : python pep8 check
-    * vim-pyflakes : python staic check
-    * vim-pyunit : python unit test
-    * `vim-snipmate` : TextMate's snippets
+    * `vim-pep8`_ : python pep8 check
+    * `vim-pyflakes`_ : python staic check
+    * `vim-pyunit`_ : python unit test
+    * `vim-snipmate`_ : TextMate's snippets
 
         * dependencies :
             * `tlib_vim`_
@@ -29,6 +29,9 @@ vim-Plugin
 .. _`vim-snipmate`: https://github.com/garbas/vim-snipmate
 .. _`vim-addon-mw-utils`: https://github.com/MarcWeber/vim-addon-mw-utils
 .. _`snipmate-snippets`: https://github.com/honza/snipmate-snippets
+.. _`vim-pyunit`: https://github.com/nvie/vim-pyunit
+.. _`vim-pyflakes`:  https://github.com/nvie/vim-pyflakes
+.. _`vim-pep8`:  https://github.com/nvie/vim-pep8
 
 Quick installation
 ------------------
