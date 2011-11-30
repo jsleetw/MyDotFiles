@@ -19,7 +19,8 @@ vim-Plugin
     * vim-pyflakes : python staic check
     * vim-pyunit : python unit test
     * vim-snipmate : TextMate's snippets
-        * dependencies:
+        
+        * dependencies :
             * tlib_vim
             * vim-addon-mw-utils
             * snipmate-snippets
@@ -45,4 +46,4 @@ For command-t
 
     cd .vim/bundle/command-t; rake make
 
-:: _`vim-snipmate`: https://github.com/garbas/vim-snipmate
+.. _`vim-snipmate`: https://github.com/garbas/vim-snipmate
