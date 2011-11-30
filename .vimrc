@@ -177,8 +177,8 @@ fu! ForPython()
     "noremap ' :w!<CR>:!python -tt %<CR>
     noremap <buffer> ' :call Pyflakes()<CR>
     let no_pyunit_maps = 1
-    noremap <leader>t :call PyUnitRunTests()<CR>
-    noremap! <leader>t <Esc>:call PyUnitRunTests()<CR>
+    noremap <leader>c :call PyUnitRunTests()<CR>
+    noremap! <leader>c <Esc>:call PyUnitRunTests()<CR>
     let g:PyUnitTestsStructure = "side-by-side"
     "}}}
 endf
