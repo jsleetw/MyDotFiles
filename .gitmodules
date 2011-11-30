@@ -1,34 +1,33 @@
 [submodule ".vim/bundle/python-mode"]
     path = .vim/bundle/python-mode
-    url = https://github.com/klen/python-mode.git
+    url = https://github.com/klen/python-mode
 [submodule ".vim/bundle/vim-pep8"]
     path = .vim/bundle/vim-pep8
-    url = https://github.com/nvie/vim-pep8.git
+    url = https://github.com/nvie/vim-pep8
 [submodule ".vim/bundle/vim-pyflakes"]
     path = .vim/bundle/vim-pyflakes
-    url = https://github.com/nvie/vim-pyflakes.git
+    url = https://github.com/nvie/vim-pyflakes
 [submodule ".vim/bundle/vim-pyunit"]
     path = .vim/bundle/vim-pyunit
-    url = https://github.com/nvie/vim-pyunit.git
+    url = https://github.com/nvie/vim-pyunit
 [submodule ".vim/bundle/nerdtree"]
     path = .vim/bundle/nerdtree
-    url = https://github.com/scrooloose/nerdtree.git
+    url = https://github.com/scrooloose/nerdtree
 [submodule ".vim/bundle/command-t"]
     path = .vim/bundle/command-t
     url = git://git.wincent.com/command-t.git
 [submodule ".vim/bundle/vim-snipmate"]
     path = .vim/bundle/vim-snipmate
-    url = https://github.com/garbas/vim-snipmate.git
+    url = https://github.com/garbas/vim-snipmate
 [submodule ".vim/bundle/tlib_vim"]
     path = .vim/bundle/tlib_vim
-    url = https://github.com/tomtom/tlib_vim.git
+    url = https://github.com/tomtom/tlib_vim
 [submodule ".vim/bundle/vim-addon-mw-utils"]
     path = .vim/bundle/vim-addon-mw-utils
-    url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+    url = https://github.com/MarcWeber/vim-addon-mw-utils
 [submodule ".vim/bundle/snipmate-snippets"]
     path = .vim/bundle/snipmate-snippets
-    url = https://github.com/honza/snipmate-snippets.git
-
+    url = https://github.com/honza/snipmate-snippets
 [submodule ".vim/bundle/supertab"]
-	path = .vim/bundle/supertab
-	url = https://github.com/ervandew/supertab
+    path = .vim/bundle/supertab
+    url = https://github.com/ervandew/supertab
