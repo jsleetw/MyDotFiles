@@ -1,4 +1,4 @@
-mydotfile
+MyDotFiles
 =========
 Setting up my dotfile quickly
 
@@ -19,7 +19,7 @@ vim-Plugin
 
 Quick installation
 ------------------
-    wget -O - https://github.com/jsleetw/_myDotFile/raw/master/autoinstall.sh | bash
+    wget -O - https://github.com/jsleetw/MyDotFiles/raw/master/autoinstall.sh | bash
 
 For command-t
 -------------
