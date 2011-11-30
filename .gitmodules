@@ -11,3 +11,6 @@
 [submodule ".vim/bundle/vim-pyunit"]
 	path = .vim/bundle/vim-pyunit
 	url = https://github.com/nvie/vim-pyunit.git
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git

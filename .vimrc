@@ -39,7 +39,7 @@ set noswapfile
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
-set pastetoggle=<F2>  " F2 to paste mode
+set pastetoggle=<leader>p  " p to paste mode
 
 nnoremap ; :
 
@@ -79,12 +79,15 @@ syntax on
 
 if !exists("no_plugin_maps") && !exists("no_toggle_mouse_maps")
     if !hasmapto('<SID>ToggleMouse()')
-        noremap <F3> :call <SID>ToggleMouse()<CR>
-        inoremap <F3> <Esc>:call <SID>ToggleMouse()<CR>a
+        noremap <leader>m :call <SID>ToggleMouse()<CR>
+        inoremap <leader>m <Esc>:call <SID>ToggleMouse()<CR>a
     endif
 endif
 
-fun! s:ToggleMouse()
+"set hotkey for NERDTree
+noremap <leader>n :NERDTreeToggle<CR>
+
+function! s:ToggleMouse()
     if !exists("s:old_mouse")
         let s:old_mouse = "a"
     endif
@@ -174,8 +177,8 @@ fu! ForPython()
     "noremap ' :w!<CR>:!python -tt %<CR>
     noremap <buffer> ' :call Pyflakes()<CR>
     let no_pyunit_maps = 1
-    noremap ,t :call PyUnitRunTests()<CR>
-    noremap! ,t <Esc>:call PyUnitRunTests()<CR>
+    noremap <leader>t :call PyUnitRunTests()<CR>
+    noremap! <leader>t <Esc>:call PyUnitRunTests()<CR>
     let g:PyUnitTestsStructure = "side-by-side"
     "}}}
 endf
