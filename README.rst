@@ -46,4 +46,6 @@ For command-t
 
     cd .vim/bundle/command-t; rake make
 
-.. _`vim-snipmate`: https://github.com/garbas/vim-snipmate
+`tlib_vim`_
+.. _`tlib_vim`: https://github.com/tomtom/tlib_vim
+
