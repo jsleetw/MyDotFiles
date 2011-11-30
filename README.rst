@@ -21,7 +21,7 @@ vim-Plugin
     * vim-snipmate : TextMate's snippets
         
         * dependencies :
-            * tlib_vim
+            * `tlib_vim`_
             * vim-addon-mw-utils
             * snipmate-snippets
 
@@ -46,6 +46,5 @@ For command-t
 
     cd .vim/bundle/command-t; rake make
 
-`tlib_vim`_
 .. _`tlib_vim`: https://github.com/tomtom/tlib_vim
 
