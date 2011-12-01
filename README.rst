@@ -38,7 +38,7 @@ Quick installation
 
 ::
 
-    wget -O - https://github.com/jsleetw/MyDotFiles/raw/master/autoinstall.sh | bash
+    wget -O - https://github.com/jsleetw/MyDotFiles/raw/master/auto-install.sh | bash
 
 For command-t
 -------------
