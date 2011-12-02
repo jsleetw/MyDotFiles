@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 INSTALL_TO=~/mydev
 
 function LinkIt() {
