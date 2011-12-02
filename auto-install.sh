@@ -9,8 +9,9 @@ function LinkIt() {
             rm "$HOME/$1"
             ln -s "$INSTALL_TO/MyDotFiles/$1" "$HOME/$1"
         else
-            echo "~/$1 is a file"
-            #Do something here...
+            echo "~/$1 is a file or directory backup it then link it"
+            mv "$HOME/$1" "$HOME/$1.bak"
+            ln -s "$INSTALL_TO/MyDotFiles/$1" "$HOME/$1"
         fi
     else
         ln -s "$INSTALL_TO/MyDotFiles/$1" "$HOME/$1"
