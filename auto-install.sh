@@ -2,8 +2,16 @@
 INSTALL_TO=~/mydev
 
 function LinkIt() {
-    if [ -e "$HOME/$1" ]; then
+    if [[ -e "$HOME/$1" ]]; then
         echo "~/$1 already exists."
+        if [[ -h "$HOME/$1" ]]; then
+            echo "~/$1 is a s-link. remove then reink it"
+            rm "$HOME/$1"
+            ln -s "$INSTALL_TO/MyDotFiles/$1" "$HOME/$1"
+        else
+            echo "~/$1 is a file"
+            #Do something here...
+        fi
     else
         ln -s "$INSTALL_TO/MyDotFiles/$1" "$HOME/$1"
     fi
