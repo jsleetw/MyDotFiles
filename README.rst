@@ -12,9 +12,9 @@ Feature
 
 vim-Plugins
 ----------
-    * command-t : fast file search, need ruby support for vim.
-    * nerdtree : file browsering
-    * python-mode : for python
+    * `command-t`_ : fast file search, need ruby support for vim.
+    * `nerdtree`_ : file browsering
+    * `python-mode`_ : for python
     * `vim-pep8`_ : python pep8 check
     * `vim-pyflakes`_ : python staic check
     * `vim-pyunit`_ : python unit test
@@ -32,6 +32,9 @@ vim-Plugins
 .. _`vim-pyunit`: https://github.com/nvie/vim-pyunit
 .. _`vim-pyflakes`:  https://github.com/nvie/vim-pyflakes
 .. _`vim-pep8`:  https://github.com/nvie/vim-pep8
+.. _`python-mode`:  https://github.com/klen/python-mode
+.. _`nerdtree`:  https://github.com/scrooloose/nerdtree
+.. _`command-t`: https://github.com/wincent/Command-T
 
 Quick installation
 ------------------
