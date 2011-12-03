@@ -7,14 +7,16 @@
     branch = auto
     log = auto
 [alias]
-	st = status
-	co = checkout
-	br = branch
-	ci = commit
-	unstage = reset HEAD --
-	last = log -1 HEAD
+    st = status
+    co = checkout
+    br = branch
+    ci = commit
+    unstage = reset HEAD --
+    last = log -1 HEAD
 [core]
     editor = vim
 [merge]
     tool = vimdiff
+[branch]
+    autosetuprebase = always
 
