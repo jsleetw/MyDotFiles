@@ -132,4 +132,8 @@ export LC_CTYPE=zh_TW.UTF-8
 export PATH=$PATH:/var/lib/gems/1.8/bin/ # load system ruby gems as function
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-source ~/.novarc  #load novarc
+if [ -f ~/.novarc]; then
+    source ~/.novarc  #load novarc
+fi
+
+TERM=xterm-256color
