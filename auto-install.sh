@@ -36,7 +36,6 @@ LinkIt .vimrc
 LinkIt .bashrc
 LinkIt .gitconfig
 LinkIt .bash
-LinkIt .gitconfig
 
 echo "Installed and configured, have fun."
 
