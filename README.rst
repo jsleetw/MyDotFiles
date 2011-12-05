@@ -51,6 +51,12 @@ For command-t
 
     vim --version | grep ruby
 
+* if not ruby+ , install vim-nox
+
+::
+
+    sudo apt-get install vim-nox
+
 * make command-t
 
 ::
