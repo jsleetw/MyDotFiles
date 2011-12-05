@@ -63,3 +63,10 @@ For command-t
 
     cd .vim/bundle/command-t; rake make
 
+Keymap
+------
+
++--------------------------+
+| ,m | mouse mode change |
+| ,n | nerdtree on/off|
++-----------------------+
