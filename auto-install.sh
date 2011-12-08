@@ -2,6 +2,13 @@
 
 INSTALL_TO=~/mydev
 
+if ! hash git &>/dev/null; then
+    echo "git not install yet!"
+    echo "You can install it by typing:"
+    echo "sudo apt-get install git"
+    exit
+fi
+
 function LinkIt() {
     if [[ -e "$HOME/$1" ]]; then
         echo "~/$1 already exists."
