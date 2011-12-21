@@ -129,7 +129,7 @@ source ~/.bash/*
 #export LANG=zh_TW.UTF-8
 #export LANG=POSIX
 export LC_CTYPE=zh_TW.UTF-8
-export PATH=$PATH:/var/lib/gems/1.8/bin/ # load system ruby gems as function
+export PATH=$PATH:~/bin/:/var/lib/gems/1.8/bin/ # load system ruby gems as function
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 if [ -f ~/.novarc ]; then
