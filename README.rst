@@ -63,16 +63,20 @@ For command-t
 
     cd .vim/bundle/command-t; rake make
 
-Keymap
-------
+Keymaps
+-------
 
-+----+---------------------+
-| ,m | mouse mode change   |
-+----+---------------------+
-| ,n | nerdtree on/off     |
-+----+---------------------+
-| ;  | python pep8 check   |
-+----+---------------------+
-| '  | python static check |
-+----+---------------------+
+leader key is ","
+
++-----------+---------------------+
+| <leader>m | mouse mode change   |
++-----------+---------------------+
+| <leader>n | nerdtree on/off     |
++-----------+---------------------+
+| <leader>t | tigger command-t    |
++----+----------------------------+
+| ;  | python pep8 check          |
++----+----------------------------+
+| '  | python static check        |
++----+----------------------------+
 
