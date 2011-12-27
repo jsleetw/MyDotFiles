@@ -66,13 +66,13 @@ For command-t
 Keymaps
 -------
 
-leader key is ","
+* leader key is ","
 
 +------------+---------------------+
 | <leader>m  | mouse mode change   |
 +------------+---------------------+
 | <leader>n  | nerdtree on/off     |
-+----------- +---------------------+
++------------+---------------------+
 | <leader>t  | tigger command-t    |
 +------------+---------------------+
 | <leader>ev | edit vimrc          |
@@ -87,4 +87,6 @@ leader key is ","
 +------------+---------------------+
 | '          | python static check |
 +------------+---------------------+
+
+
 
