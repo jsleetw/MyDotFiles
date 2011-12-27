@@ -78,7 +78,7 @@ endif
 set laststatus=2
 let &statusline='%<[%n] %{HasPaste()}%F %m%= %h%r %-19([%p%%] %3l,%02c%03V%)%y [%{FileEncoding()}] [%{&fileformat}]'
 
-colorscheme elflord
+"colorscheme elflord
 syntax on
 
 if !exists("no_plugin_maps") && !exists("no_toggle_mouse_maps")
@@ -240,3 +240,6 @@ set termencoding=utf-8
 set fileformats=unix,dos,mac
 set fileformat=unix
 
+set t_Co=256
+let python_highlight_all = 1
+colorscheme wombat256
