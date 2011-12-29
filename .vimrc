@@ -45,7 +45,7 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 set pastetoggle=<leader>p  " p to paste mode
 
-nnoremap ; :
+"nnoremap ; :
 
 " Use Q for formatting the current paragraph (or selection)
 vmap Q gq
@@ -78,7 +78,6 @@ endif
 set laststatus=2
 let &statusline='%<[%n] %{HasPaste()}%F %m%= %h%r %-19([%p%%] %3l,%02c%03V%)%y [%{FileEncoding()}] [%{&fileformat}]'
 
-"colorscheme elflord
 syntax on
 
 if !exists("no_plugin_maps") && !exists("no_toggle_mouse_maps")
@@ -175,10 +174,10 @@ fu! ForPython()
     let g:pep8_args = "--ignore=E501" " pass E501 line too long (82 characters) error
     " Map ; to run PEP8 check
     "noremap ; :w!<CR>:!pep8 --show-pep8 --show-source %<CR>
-    noremap <buffer> ; :call Pep8()<CR>
+    noremap <buffer> <leader>; :call Pep8()<CR>
     " Map ' to run python stynx check
     "noremap ' :w!<CR>:!python -tt %<CR>
-    noremap <buffer> ' :call Pyflakes()<CR>
+    noremap <buffer> <leader>' :call Pyflakes()<CR>
     let no_pyunit_maps = 1
     noremap <leader>c :call PyUnitRunTests()<CR>
     noremap! <leader>c <Esc>:call PyUnitRunTests()<CR>

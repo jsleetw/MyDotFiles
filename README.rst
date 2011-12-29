@@ -83,9 +83,9 @@ Keymaps
 +------------+---------------------+
 | <leader>c  | PyUnitRunTests      |
 +------------+---------------------+
-| ;          | python pep8 check   |
+| <leader>;  | python pep8 check   |
 +------------+---------------------+
-| '          | python static check |
+| <leader>'  | python static check |
 +------------+---------------------+
 
 
