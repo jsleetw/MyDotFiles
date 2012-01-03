@@ -178,6 +178,7 @@ fu! ForPython()
     " Map ' to run python stynx check
     "noremap ' :w!<CR>:!python -tt %<CR>
     noremap <buffer> <leader>' :call Pyflakes()<CR>
+    noremap <buffer> <leader>l :PyLintToggle<CR>
     let no_pyunit_maps = 1
     noremap <leader>c :call PyUnitRunTests()<CR>
     noremap! <leader>c <Esc>:call PyUnitRunTests()<CR>
