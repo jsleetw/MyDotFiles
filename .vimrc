@@ -165,7 +165,7 @@ endf
 fu! ForPython()
     "{{{
     " Disable pylint checking every save
-    let g:pymode_lint = 0
+    "let g:pymode_lint = 0
     "setlocal softtabstop=4
     "setlocal shiftwidth=4
     "setlocal textwidth=80
@@ -178,11 +178,12 @@ fu! ForPython()
     " Map ' to run python stynx check
     "noremap ' :w!<CR>:!python -tt %<CR>
     noremap <buffer> <leader>' :call Pyflakes()<CR>
-    noremap <buffer> <leader>l :PyLintToggle<CR>
+    "noremap <buffer> <leader>l :PyLintToggle<CR>
     let no_pyunit_maps = 1
     noremap <leader>c :call PyUnitRunTests()<CR>
     noremap! <leader>c <Esc>:call PyUnitRunTests()<CR>
     let g:PyUnitTestsStructure = "side-by-side"
+    let g:pymode_rope_always_show_complete_menu = 1
     "}}}
 endf
 
