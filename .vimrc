@@ -36,8 +36,6 @@ set nobackup             " no more .swp
 set noswapfile
 " Auto expand tabs to spaces
 set expandtab
-" Auto indent after a {
-set smartindent
 
 "highlight whitespaces for python
 set list
@@ -166,11 +164,11 @@ fu! ForPython()
     "{{{
     " Disable pylint checking every save
     "let g:pymode_lint = 0
-    "setlocal softtabstop=4
-    "setlocal shiftwidth=4
-    "setlocal textwidth=80
-    "setlocal smarttab
-    "setlocal expandtab
+    setlocal softtabstop=4
+    setlocal shiftwidth=4
+    setlocal textwidth=80
+    setlocal smarttab
+    setlocal expandtab
     let g:pep8_args = "--ignore=E501" " pass E501 line too long (82 characters) error
     " Map ; to run PEP8 check
     "noremap ; :w!<CR>:!pep8 --show-pep8 --show-source %<CR>
