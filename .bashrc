@@ -149,3 +149,6 @@ _pip_completion()
 complete -o default -F _pip_completion pip
 # pip bash completion end
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
