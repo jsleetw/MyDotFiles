@@ -43,6 +43,7 @@ LinkIt .vimrc
 LinkIt .bashrc
 LinkIt .gitconfig
 LinkIt .bash
+LinkIt .gemrc
 
 echo "Installed and configured, have fun."
 
