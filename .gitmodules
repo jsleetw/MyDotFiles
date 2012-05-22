@@ -37,3 +37,6 @@
 [submodule ".vim/bundle/vim-cucumber"]
 	path = .vim/bundle/vim-cucumber
 	url = git://github.com/tpope/vim-cucumber.git
+[submodule ".vim/bundle/vim-flake8"]
+	path = .vim/bundle/vim-flake8
+	url = https://github.com/nvie/vim-flake8.git

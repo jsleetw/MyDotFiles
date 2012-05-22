@@ -1,3 +1,4 @@
+let g:flake8_ignore = "E501,W293"
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -169,13 +170,14 @@ fu! ForPython()
     setlocal textwidth=80
     setlocal smarttab
     setlocal expandtab
-    let g:pep8_args = "--ignore=E501" " pass E501 line too long (82 characters) error
+    "let g:flake8_ignore = "--ignore=E501" " pass E501 line too long (82 characters) error
+    "let g:flake8_ignore = "E501,W293" move to top
     " Map ; to run PEP8 check
     "noremap ; :w!<CR>:!pep8 --show-pep8 --show-source %<CR>
-    noremap <buffer> <leader>; :call Pep8()<CR>
+    noremap <buffer> <leader>; :call Flake8()<CR>
     " Map ' to run python stynx check
     "noremap ' :w!<CR>:!python -tt %<CR>
-    noremap <buffer> <leader>' :call Pyflakes()<CR>
+    "noremap <buffer> <leader>' :call Pyflakes()<CR>
     "noremap <buffer> <leader>l :PyLintToggle<CR>
     let no_pyunit_maps = 1
     noremap <leader>c :call PyUnitRunTests()<CR>
