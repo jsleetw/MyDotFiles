@@ -243,4 +243,6 @@ set fileformat=unix
 
 set t_Co=256
 let python_highlight_all = 1
-colorscheme torte
+colorscheme koehler
+
+autocmd BufNewFile,BufRead *.json set ft=javascript "use javascript support json
