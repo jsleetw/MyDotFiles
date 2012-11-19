@@ -246,3 +246,4 @@ let python_highlight_all = 1
 colorscheme koehler
 
 autocmd BufNewFile,BufRead *.json set ft=javascript "use javascript support json
+set runtimepath^=~/.vim/bundle/ctrlp.vim
