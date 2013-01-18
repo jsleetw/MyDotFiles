@@ -1,6 +1,6 @@
 [user]
-	name = jsleetw
-	email = ail529@gmail.com
+    name = jsleetw
+    email = ail529@gmail.com
 [color]
     diff = auto
     status = auto
@@ -8,13 +8,13 @@
     log = auto
 [alias]
     st = status
-	co = checkout
+    co = checkout
     br = branch
     ci = commit
     unstage = reset HEAD --
     last = log -1 HEAD
 [core]
-	editor = vim -f
+    editor = vim -f
 [merge]
     tool = vimdiff
 [branch]
