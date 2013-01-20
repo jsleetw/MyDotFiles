@@ -41,6 +41,7 @@ fi
 LinkIt .vim
 LinkIt .vimrc
 LinkIt .bashrc
+LinkIt .bash_profile
 LinkIt .gitconfig
 LinkIt .bash
 LinkIt .gemrc
