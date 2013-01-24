@@ -150,7 +150,8 @@ complete -o default -F _pip_completion pip
 # pip bash completion end
 
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for script
+PATH=$PATH:/usr/local/share/python # Add for mac python script
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 export WORKON_HOME=$HOME/Envs
