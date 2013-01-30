@@ -45,6 +45,7 @@ LinkIt .bash_profile
 LinkIt .gitconfig
 LinkIt .bash
 LinkIt .gemrc
+LinkIt .screenrc
 
 echo "Installed and configured, have fun."
 
