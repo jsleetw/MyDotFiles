@@ -160,3 +160,7 @@ export PROJECT_HOME=$HOME/Devel
 source ~/python_env/bin/activate
 export PIP_REQUIRE_VIRTUALENV=true
 #for python virtualenv
+
+if [ -f ~/.git-completion.bash ]; then
+      . ~/.git-completion.bash
+fi

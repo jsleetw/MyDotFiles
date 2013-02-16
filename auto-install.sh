@@ -45,6 +45,7 @@ LinkIt .bash_profile
 LinkIt .gitconfig
 LinkIt .bash
 LinkIt .gemrc
+LinkIt .git-completion.bash
 
 echo "Installed and configured, have fun."
 
