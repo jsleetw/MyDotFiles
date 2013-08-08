@@ -46,6 +46,7 @@ LinkIt .gitconfig
 LinkIt .bash
 LinkIt .gemrc
 LinkIt .git-completion.bash
+LinkIt .tmux.conf
 
 echo "Installed and configured, have fun."
 
