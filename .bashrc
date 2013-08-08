@@ -164,3 +164,6 @@ export PIP_REQUIRE_VIRTUALENV=true
 if [ -f ~/.git-completion.bash ]; then
       . ~/.git-completion.bash
 fi
+
+export EDITOR='vim'
+
