@@ -166,4 +166,4 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 export EDITOR='vim'
-
+export PATH="$(brew --prefix)/bin:$PATH"
