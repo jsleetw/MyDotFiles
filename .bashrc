@@ -154,12 +154,17 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for script
 PATH=$PATH:/usr/local/share/python # Add for mac python script
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
-export WORKON_HOME=$HOME/Envs
-export PROJECT_HOME=$HOME/Devel
+#export WORKON_HOME=$HOME/Envs
+#export PROJECT_HOME=$HOME/Devel
 #source ~/python_env/bin/virtualenvwrapper.sh
-source ~/python_env/bin/activate
-export PIP_REQUIRE_VIRTUALENV=true
+#source ~/python_env/bin/activate
+#source /usr/local/share/python/virtualenvwrapper.sh
+#export PIP_REQUIRE_VIRTUALENV=true
 #for python virtualenv
+export WORKON_HOME=$HOME/.virtualenv
+export PROJECT_HOME=$HOME/mydev
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/share/python/virtualenvwrapper.sh
+source /usr/local/share/python/virtualenvwrapper_lazy.sh
 
 if [ -f ~/.git-completion.bash ]; then
       . ~/.git-completion.bash
@@ -167,3 +172,6 @@ fi
 
 export EDITOR='vim'
 export PATH="$(brew --prefix)/bin:$PATH"
+#for aws
+#export PATH=$PATH:/Users/jslee/mydev/eb/eb/linux/python2.7/
+#export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
