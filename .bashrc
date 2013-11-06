@@ -119,7 +119,7 @@ function git_since_last_commit {
     echo "${hours_since_last_commit}h${minutes_since_last_commit}m ";
 }
 
-PS1="[\[\033[1;32m\]\w\[\033[0m\]] \[\033[0m\]\[\033[1;36m\]\$(git_branch)\[\033[0;33m\]\$(git_since_last_commit)\[\033[0m\]$ " 
+PS1="\033[1;35m\]\u\033[0m\]@\033[1;36m\]\h\033[0m\][\033[1;32m\]\w\[\033[0m\]] \[\033[0m\]\[\033[1;36m\]\$(git_branch)\[\033[0;33m\]\$(git_since_last_commit)\[\033[0m\]$ " 
 
 export PYTHONPATH=${PYTHONPATH}
 
@@ -173,5 +173,5 @@ fi
 export EDITOR='vim'
 export PATH="$(brew --prefix)/bin:$PATH"
 #for aws
-#export PATH=$PATH:/Users/jslee/mydev/eb/eb/linux/python2.7/
+export PATH=$PATH:/Users/jslee/mydev/eb/eb/linux/python2.7/
 #export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
