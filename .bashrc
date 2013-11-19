@@ -175,3 +175,5 @@ export PATH="$(brew --prefix)/bin:$PATH"
 #for aws
 export PATH=$PATH:/Users/jslee/mydev/eb/eb/linux/python2.7/
 #export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+
+export PAGER="most"
