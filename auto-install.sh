@@ -23,6 +23,7 @@ function LinkIt() {
         fi
     else
         ln -s "$INSTALL_TO/MyDotFiles/$1" "$HOME/$1"
+        echo "link $1 done"
     fi
 }
 
