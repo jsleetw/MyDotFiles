@@ -107,7 +107,7 @@ function git_branch {
     echo "("${ref#refs/heads/}") ";
 }
 
-# shot git last commit
+# show git last commit
 function git_since_last_commit {
     now=`date +%s`;
     last_commit=$(git log --pretty=format:%at -1 2> /dev/null) || return;
@@ -119,7 +119,15 @@ function git_since_last_commit {
     echo "${hours_since_last_commit}h${minutes_since_last_commit}m ";
 }
 
-PS1="\033[1;35m\]\u\033[0m\]@\033[1;36m\]\h\033[0m\][\033[1;32m\]\w\[\033[0m\]] \[\033[0m\]\[\033[1;36m\]\$(git_branch)\[\033[0;33m\]\$(git_since_last_commit)\[\033[0m\]$ " 
+# show file in the directory
+function file_of_dir {
+    file_num=$(/bin/ls -1 | /usr/bin/wc -l | /usr/bin/sed 's: ::g')
+    file_size=$(/bin/ls -lahsk | /usr/bin/grep -m 1 total | /usr/bin/sed 's/total //')
+    echo "${file_num} files, ${file_size}K";
+}
+
+PS1="\033[1;35m\]\u\033[0m\]@\033[1;36m\]\h\033[0m\][\033[1;32m\]\w\[\033[0m\]] \$(file_of_dir)
+\[\033[0m\]\[\033[1;36m\]\$(git_branch)\[\033[0;33m\]\$(git_since_last_commit)\[\033[0m\]$ "
 
 export PYTHONPATH=${PYTHONPATH}
 
