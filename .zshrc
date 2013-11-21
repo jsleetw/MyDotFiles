@@ -45,3 +45,4 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+PATH="/usr/local/bin:/usr/local/sbin:$PATH"
