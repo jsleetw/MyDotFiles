@@ -157,7 +157,7 @@ PATH=$PATH:/usr/local/share/python # Add for mac python script
 export WORKON_HOME=$HOME/Envs
 export PROJECT_HOME=$HOME/Devel
 #source ~/python_env/bin/virtualenvwrapper.sh
-source ~/python_env/bin/activate
+#source ~/python_env/bin/activate
 export PIP_REQUIRE_VIRTUALENV=true
 #for python virtualenv
 
@@ -166,4 +166,4 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 export EDITOR='vim'
-export PATH="$(brew --prefix)/bin:$PATH"
+#export PATH="$(brew --prefix)/bin:$PATH"
